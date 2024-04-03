@@ -12,3 +12,9 @@ A simple Makefile code is provided for your convenience. The code is straightfor
 ```bash
 > make
 ```
+
+Note that you need to have a local installation of LaTeX to compile the .tex file. Palmetto conveniently has a LaTeX module, which can be added by using the command:
+
+```bash
+> module add latex
+```
