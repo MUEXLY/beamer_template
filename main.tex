@@ -23,9 +23,10 @@
 
 \setbeamersize
 {
-    text margin left=0.5cm,
-    text margin right=0.5cm
+text margin left=0.5cm,
+text margin right=0.5cm
 }
+
 %------------------------------------------------------------
 %This block of code defines the information to appear in the
 %Title page
@@ -76,8 +77,8 @@
 %This block of code is for the table of contents after
 %the title page
 \begin{frame}
-\frametitle{Table of Contents}
-\tableofcontents
+    \frametitle{Table of Contents}
+    \tableofcontents
 \end{frame}
 %---------------------------------------------------------
 
@@ -85,91 +86,91 @@
 %---------------------------------------------------------
 %Example annotation
 \begin{frame}
-\frametitle{Sample Annotation}
-\centering
-	\begin{tikzpicture}
-	\node[anchor=south east, inner sep=0] (eq) at (0, 0) {\scalebox{2}{$f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{-{\frac{1}{2}} (\frac{x-\mu}{\sigma})^2}$}};
-	\node[anchor=east, inner sep=1] (anot1) at (-4, -1) {\Large standard deviation};
-	\node[anchor=west, inner sep=1] (anot2) at (-1, 2.5) {\Large Mean};
-	\draw[-latex, ultra thick, red] (anot1) -- (eq);
-	\draw[-latex, ultra thick, red] (anot2) -- (-0.8, 1.1) (eq); 
-	\end{tikzpicture}
+    \frametitle{Sample Annotation}
+    \centering
+    \begin{tikzpicture}
+        \node[anchor=south east, inner sep=0] (eq) at (0, 0) {\scalebox{2}{$f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{-{\frac{1}{2}} (\frac{x-\mu}{\sigma})^2}$}};
+        \node[anchor=east, inner sep=1] (anot1) at (-4, -1) {\Large standard deviation};
+        \node[anchor=west, inner sep=1] (anot2) at (-1, 2.5) {\Large Mean};
+        \draw[-latex, ultra thick, red] (anot1) -- (eq);
+        \draw[-latex, ultra thick, red] (anot2) -- (-0.8, 1.1) (eq); 
+    \end{tikzpicture}
 \end{frame}
 %---------------------------------------------------------
 
 %---------------------------------------------------------
 %Example annotation
 \begin{frame}
-\frametitle{Sample Annotation}
-\centering
-	\begin{tikzpicture}
-	\node [anchor=west] (note) at (-2,6) {\Large Gear Symbol};
-	\node [anchor=west] (name) at (-2,4) {\Large Group Name};
-	\begin{scope}[xshift=1cm]
-	    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=0.7\textwidth]{./logos/EnriqueGroupEh.png}};
-	    \begin{scope}[x={(image.south east)},y={(image.north west)}]
-		\draw[red,ultra thick,rounded corners] (0.38,0.80) rectangle (0.55,0.55);
-		\draw[-latex, ultra thick, red, anchor=north] (note) to[out=0, in=-120] (0.48,0.55);
-		    \draw[-stealth, line width=5pt, cyan] (name) -- ++(0.4, -0.0);
-	    \end{scope}
-	\end{scope}
-	\end{tikzpicture}
+    \frametitle{Sample Annotation}
+    \centering
+    \begin{tikzpicture}
+        \node [anchor=west] (note) at (-2,6) {\Large Gear Symbol};
+        \node [anchor=west] (name) at (-2,4) {\Large Group Name};
+        \begin{scope}[xshift=1cm]
+            \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=0.7\textwidth]{./logos/EnriqueGroupEh.png}};
+            \begin{scope}[x={(image.south east)},y={(image.north west)}]
+                \draw[red,ultra thick,rounded corners] (0.38,0.80) rectangle (0.55,0.55);
+                \draw[-latex, ultra thick, red, anchor=north] (note) to[out=0, in=-120] (0.48,0.55);
+                \draw[-stealth, line width=5pt, cyan] (name) -- ++(0.4, -0.0);
+            \end{scope}
+        \end{scope}
+    \end{tikzpicture}
 \end{frame}
 %---------------------------------------------------------
 
 %---------------------------------------------------------
 %Example of block flow chart
 \begin{frame}
-\frametitle{Sample Block Chart}
-\centering
-	\begin{tikzpicture}[node distance=1.5cm]
-		\node(b0) [block] {data};
-		\node(b1) [block, below of=b0] {$\gamma - \bar\gamma = F(\bm{x})$};
-		\node(b2) [block, below of=b1] {$G(\bm{x})$};
-		\node(b3) [block, below of=b2] {$f(\bm{x})$};
-		\node(b4) [block, below of=b3] {$C(\bm{x})$};
-		\node(b5) [block, below of=b4] {$\sum_1^n C(\bm{x})$};
-		\draw [arrow] (b0) -- (b1);
-		\draw [arrow] (b1) -- (b2);
-		\draw [arrow] (b2) -- (b3);
-		\draw [arrow] (b3) -- (b4);
-		\draw [arrow] (b4) -- +(-3,0) |- (b0) node[near start,sloped,above] {};
-		\draw [arrow] (b4) -- +(+3,0) |- (b0) node[near start,sloped,above] {};
-		\draw [arrow] (b4) -- (b5);
-	\end{tikzpicture}
+    \frametitle{Sample Block Chart}
+    \centering
+    \begin{tikzpicture}[node distance=1.5cm]
+        \node(b0) [block] {data};
+        \node(b1) [block, below of=b0] {$\gamma - \bar\gamma = F(\bm{x})$};
+        \node(b2) [block, below of=b1] {$G(\bm{x})$};
+        \node(b3) [block, below of=b2] {$f(\bm{x})$};
+        \node(b4) [block, below of=b3] {$C(\bm{x})$};
+        \node(b5) [block, below of=b4] {$\sum_1^n C(\bm{x})$};
+        \draw [arrow] (b0) -- (b1) node[anchor=west, near start, yshift=-0.1cm]{\small{Yeah}};
+        \draw [arrow] (b1) -- (b2) node[anchor=west, near start, yshift=-0.1cm]{\small{nice}};
+        \draw [arrow] (b2) -- (b3) node[anchor=west, near start, yshift=-0.1cm]{\small{hmm}};
+        \draw [arrow] (b3) -- (b4);
+        \draw [arrow] (b4) -- +(-3,0) |- (b0) node[near start,sloped,above] {\small{Go back}};
+        \draw [arrow] (b4) -- +(+3,0) |- (b0) node[near start,sloped,above] {Lol};
+        \draw [arrow] (b4) -- (b5);
+    \end{tikzpicture}
 \end{frame}
 %---------------------------------------------------------
 
 %---------------------------------------------------------
 % Example of logical flow chart
 \begin{frame}
-\frametitle{Sample Logical Flow Chart}
+    \frametitle{Sample Logical Flow Chart}
 
-\begin{columns}
+    \begin{columns}
 
-\column{0.5\textwidth}
-\centering
-	\begin{tikzpicture}[node distance=2cm]
-		\node(start) [startstop] {Start};
-		\node(in1) [io, below of=start] {input};
-		\node(in2) [process, below of=in1] {input};
-		\node(in3) [decision, below of=in2] {input};
-		\draw [arrow] (start) -- (in1);
-		\draw [arrow] (in1) -- (in2);
-		\draw [arrow] (in2) -- (in3);
-	\end{tikzpicture}
+        \column{0.5\textwidth}
+        \centering
+        \begin{tikzpicture}[node distance=2cm]
+            \node(start) [startstop] {Start};
+            \node(in1) [io, below of=start] {input};
+            \node(in2) [process, below of=in1] {input};
+            \node(in3) [decision, below of=in2] {input};
+            \draw [arrow] (start) -- (in1) node[anchor=west, near start, yshift=-0.1cm]{\small{Yeah}};
+            \draw [arrow] (in1) -- (in2) node[anchor=west, near start, yshift=-0.1cm]{\small{nice}};
+            \draw [arrow] (in2) -- (in3) node[anchor=west, near start, yshift=-0.1cm]{\small{hmm}};
+        \end{tikzpicture}
 
-\column{0.5\textwidth}
-	\begin{tikzpicture}[node distance=2cm]
-		\node(start) [startstop] {Start};
-		\node(in1) [io, below of=start] {input};
-		\node(in2) [process, below of=in1] {input};
-		\node(in3) [decision, below of=in2] {input};
-		\draw [arrow] (start) -- (in1);
-		\draw [arrow] (in1) -- (in2);
-		\draw [arrow] (in2) -- (in3);
-	\end{tikzpicture}
-\end{columns}
+        \column{0.5\textwidth}
+        \begin{tikzpicture}[node distance=2cm]
+            \node(start) [startstop] {Start};
+            \node(in1) [io, below of=start] {input};
+            \node(in2) [process, below of=in1] {input};
+            \node(in3) [decision, below of=in2] {input};
+            \draw [arrow] (start) -- (in1);
+            \draw [arrow] (in1) -- (in2);
+            \draw [arrow] (in2) -- (in3);
+        \end{tikzpicture}
+    \end{columns}
 
 \end{frame}
 %---------------------------------------------------------
@@ -177,28 +178,28 @@
 %---------------------------------------------------------
 %Example of including figures
 \begin{frame}
-	\frametitle{Sample Include Figure}
-	\begin{figure}[h]
-		\centering
-		%\includegraphics[width=0.25\textwidth]{./logos/EnriqueGroupEh.png}
-		\adjincludegraphics[,width=0.4\textwidth,trim={{.05\width} 0 {.0\width} 0},clip]{./logos/EnriqueGroupEh.png}
+    \frametitle{Sample Include Figure}
+    \begin{figure}[h]
+        \centering
+        %\includegraphics[width=0.25\textwidth]{./logos/EnriqueGroupEh.png}
+        \adjincludegraphics[,width=0.4\textwidth,trim={{.05\width} 0 {.0\width} 0},clip]{./logos/EnriqueGroupEh.png}
 
-	\end{figure}
+    \end{figure}
 \end{frame}
 %---------------------------------------------------------
 
 %---------------------------------------------------------
 %Changing visivility of the text
 \begin{frame}
-	\frametitle{Sample frame title}
-	This is a text in second frame. For the sake of showing an example.
+    \frametitle{Sample frame title}
+    This is a text in second frame. For the sake of showing an example.
 
-	\begin{itemize}
-		\item<1-> Text visible on slide 1
-		\item<2-> Text visible on slide 2
-		\item<3> Text visible on slides 3
-		\item<4-> Text visible on slide 4
-	\end{itemize}
+    \begin{itemize}
+        \item<1-> Text visible on slide 1
+        \item<2-> Text visible on slide 2
+        \item<3> Text visible on slides 3
+        \item<4-> Text visible on slide 4
+    \end{itemize}
 \end{frame}
 
 %---------------------------------------------------------
@@ -207,11 +208,11 @@
 %---------------------------------------------------------
 %Example of the \pause command
 \begin{frame}
-	In this slide \pause
+    In this slide \pause
 
-	the text will be partially visible \pause
+    the text will be partially visible \pause
 
-	And finally everything will be there
+    And finally everything will be there
 \end{frame}
 %---------------------------------------------------------
 
@@ -220,23 +221,23 @@
 %---------------------------------------------------------
 %Highlighting text
 \begin{frame}
-	\frametitle{Sample frame title}
+    \frametitle{Sample frame title}
 
-	In this slide, some important text will be
-	\alert{highlighted} because it's important.
-	Please, don't abuse it.
+    In this slide, some important text will be
+    \alert{highlighted} because it's important.
+    Please, don't abuse it.
 
-	\begin{block}{Remark}
-		Sample text
-	\end{block}
+    \begin{block}{Remark}
+        Sample text
+    \end{block}
 
-	\begin{alertblock}{Important theorem}
-		Sample text in red box
-	\end{alertblock}
+    \begin{alertblock}{Important theorem}
+        Sample text in red box
+    \end{alertblock}
 
-	\begin{examples}
-		Sample text in green box. The title of the block is ``Examples".
-	\end{examples}
+    \begin{examples}
+        Sample text in green box. The title of the block is ``Examples".
+    \end{examples}
 \end{frame}
 %---------------------------------------------------------
 
@@ -244,21 +245,21 @@
 %---------------------------------------------------------
 %Two columns
 \begin{frame}
-	\frametitle{Two-column slide}
-	\begin{columns}
-		\column{0.5\textwidth}
-		This is a text in first column.
-		$$E=mc^2$$
-		\begin{itemize}
-			\item First item
-			\item Second item
-		\end{itemize}
+    \frametitle{Two-column slide}
+    \begin{columns}
+        \column{0.5\textwidth}
+        This is a text in first column.
+        $$E=mc^2$$
+        \begin{itemize}
+            \item First item
+            \item Second item
+        \end{itemize}
 
-		\column{0.5\textwidth}
-		This text will be in the second column
-		and on a second tought this is a nice looking
-		layout in some cases.
-	\end{columns}
+        \column{0.5\textwidth}
+        This text will be in the second column
+        and on a second tought this is a nice looking
+        layout in some cases.
+    \end{columns}
 \end{frame}
 %---------------------------------------------------------
 
